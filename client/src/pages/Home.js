@@ -2,6 +2,7 @@ import React from 'react';
 import ThoughtList from '../components/ThoughtList';
 import ThoughtForm from '../components/ThoughtForm';
 import FriendList from '../components/FriendList';
+import coverImage from '../assets/cover/background.jpg';
 
 import Auth from '../utils/auth';
 import { useQuery } from '@apollo/client';
@@ -16,13 +17,17 @@ const Home = () => {
 
   return (
     <main>
+      <div className="coverImage">
+        <img src={coverImage} className="my-2" style={{ width: "100%" }} alt="cover" />
+      </div>
+
       <div className="flex-row justify-space-between">
         {loggedIn && (
           <div className="col-12 mb-3">
             <ThoughtForm />
           </div>
         )}
-        <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}>
+        {/* <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}>
           {loading ? (
             <div>Loading...</div>
           ) : (
@@ -31,7 +36,7 @@ const Home = () => {
               title="Some Feed for Thought(s)..."
             />
           )}
-        </div>
+        </div> */}
         {loggedIn && userData ? (
           <div className="col-12 col-lg-3 mb-3">
             <FriendList

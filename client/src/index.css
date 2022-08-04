@@ -1,10 +1,10 @@
 :root {
   --primary: #497573;
-  --secondary: #99f7f2;
+  --secondary: #d55911b1;
   --tertiary: #b2c2c1;
   --quatrinary: #cadbda;
   --light: #e1f5f4;
-  --dark: #6c7575;
+  --dark: #d55911b1;
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
   --spacing-one: calc(1rem * 0.25);
@@ -26,12 +26,13 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Inconsolata', monospace;
+  font-family: "Gill Sans", sans-serif;
   font-weight: 400;
   line-height: 1.5;
   font-size: 20px;
-  color: var(--dark);
-  background-color: #f3fffee1;
+  color: var(--light);
+  /* Body Titles */
+  background-color: #f8bc6e;
 }
 
 h1,
@@ -47,7 +48,7 @@ h6 {
 }
 
 h1 {
-  font-size: 2.25rem;
+  font-size: 3rem;
 }
 
 h2 {
@@ -76,7 +77,7 @@ p {
 }
 
 a {
-  color: var(--dark);
+  color: var(--primary);
   text-decoration: none;
 }
 
@@ -97,7 +98,7 @@ nav a {
 
 nav a:hover {
   color: var(--secondary);
-  background-color: var(--dark);
+  background-color: var(--light);
 }
 
 .page-title {
@@ -115,7 +116,7 @@ nav a:hover {
   margin: 5px 0;
   border-radius: var(--border-radius);
   border: none;
-  color: var(--dark);
+  color: var(--light);
   outline: none;
   background-color: var(--secondary);
   transition: all 0.5s;
@@ -124,7 +125,7 @@ nav a:hover {
 .btn:hover,
 .pill:hover {
   color: var(--secondary);
-  background-color: var(--dark);
+  background-color: var(--light);
 }
 
 .btn:hover a,
@@ -143,10 +144,12 @@ nav a:hover {
   border-radius: var(--border-radius);
   background-color: var(--light);
   color: var(--dark);
+  /* Comment Box Text Color */
 }
 
 .card-header {
-  color: var(--secondary);
+  color: var(--light);
+  /* Comment Box Title Text Color */
   margin: 0;
   background-color: var(--dark);
   padding: 0.625rem;
@@ -184,8 +187,9 @@ nav a:hover {
   position: absolute;
   left: -9999px;
 }
-[type='radio']:checked + label,
-[type='radio']:not(:checked) + label {
+
+[type='radio']:checked+label,
+[type='radio']:not(:checked)+label {
   position: relative;
   padding-left: 25px;
   cursor: pointer;
@@ -195,8 +199,8 @@ nav a:hover {
   margin-right: 0.2rem;
 }
 
-[type='radio']:checked + label:before,
-[type='radio']:not(:checked) + label:before {
+[type='radio']:checked+label:before,
+[type='radio']:not(:checked)+label:before {
   content: '';
   position: absolute;
   left: 0;
@@ -207,8 +211,9 @@ nav a:hover {
   border-radius: 100%;
   background: #fff;
 }
-[type='radio']:checked + label:after,
-[type='radio']:not(:checked) + label:after {
+
+[type='radio']:checked+label:after,
+[type='radio']:not(:checked)+label:after {
   content: '';
   width: 12px;
   height: 12px;
@@ -221,13 +226,13 @@ nav a:hover {
   transition: all 0.2s ease;
 }
 
-[type='radio']:not(:checked) + label:after {
+[type='radio']:not(:checked)+label:after {
   opacity: 0;
   -webkit-transform: scale(0);
   transform: scale(0);
 }
 
-[type='radio']:checked + label:after {
+[type='radio']:checked+label:after {
   opacity: 1;
   -webkit-transform: scale(1);
   transform: scale(1);
@@ -757,7 +762,7 @@ nav a:hover {
 }
 
 .text-secondary {
-  color: var(--secondary);
+  color: var(--light);
 }
 
 .text-tertiary {
